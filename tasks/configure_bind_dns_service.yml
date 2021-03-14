@@ -1,0 +1,26 @@
+---
+# samba4_ad_domaincontroller/tasks/configure_bind_dns_service.yml
+
+- name: "Stop {{ bind_systemd_unit }} service"
+  service:
+    name: "{{ bind_systemd_unit }}"
+    state: 'stopped'
+    enabled: 'true'
+
+- name: 'Add settings to /etc/bind/named.conf.options'
+  template:
+    src: 'Debian10/named.conf.options.j2'
+    dest: '/etc/bind/named.conf.options'
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
+
+- name: 'Add include for /var/lib/samba/bind-dns/named.conf to /etc/bind/named.conf.local'
+  lineinfile:
+    path: '/etc/bind/named.conf.local'
+    regex: 'include /var/lib/samba/bind-dns/named.conf'
+    line: 'include /var/lib/samba/bind-dns/named.conf'
+    create: 'true'
+    owner: 'root'
+    group: 'bind'
+    mode: '0644'

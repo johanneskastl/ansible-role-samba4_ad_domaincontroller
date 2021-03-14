@@ -21,3 +21,6 @@ samba4_masked_services:
   - winbind
 samba4_ad_dc_services:
   - samba-ad-dc
+
+# name of the bind aka named service
+bind_systemd_unit: 'bind9'

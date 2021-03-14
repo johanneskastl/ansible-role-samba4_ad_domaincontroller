@@ -24,3 +24,6 @@ samba4_ad_dc_services:
 
 # name of the bind aka named service
 bind_systemd_unit: 'bind9'
+
+# path to smb.conf
+path_to_smb_conf: '/etc/samba/smb.conf'

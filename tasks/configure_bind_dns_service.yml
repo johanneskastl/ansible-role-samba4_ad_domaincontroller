@@ -1,11 +1,12 @@
 ---
 # samba4_ad_domaincontroller/tasks/configure_bind_dns_service.yml
 
-- name: "Stop {{ bind_systemd_unit }} service"
-  service:
-    name: "{{ bind_systemd_unit }}"
-    state: 'stopped'
-    enabled: 'true'
+- name: 'Install Bind packages'
+  package:
+    name: "{{ bind_packages }}"
+    state: 'present'
+  notify:
+    - 'Stop Bind service if it has been started during installation'
 
 - name: 'Add settings to /etc/bind/named.conf.options'
   template:

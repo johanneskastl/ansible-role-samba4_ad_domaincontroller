@@ -25,6 +25,9 @@ samba4_masked_services:
 samba4_ad_dc_services:
   - samba-ad-dc
 
+# use bind9 or internal DNS server?
+use_bind9_for_DNS: 'true'
+
 # name of the bind aka named service
 bind_systemd_unit: 'bind9'
 

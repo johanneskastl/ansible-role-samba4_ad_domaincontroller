@@ -17,3 +17,5 @@ samba4_unused_services:
   - smbd  
   - nmbd
   - winbind
+samba4_ad_dc_services:
+  - samba-ad-dc

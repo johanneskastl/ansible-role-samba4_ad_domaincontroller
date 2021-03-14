@@ -1,0 +1,10 @@
+---
+# samba4_ad_domaincontroller/tasks/enable_samba_ad_dc_services.yml
+
+- name: 'Enable Samba4 AD Domaincontroller services'
+  service:
+    name: "{{ item }}"
+    state: 'stopped'
+    enabled: 'true'
+    masked: 'false'
+  with_items: "{{ samba4_ad_dc_services }}"

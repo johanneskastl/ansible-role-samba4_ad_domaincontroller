@@ -1,0 +1,19 @@
+---
+# Debian
+
+samba4_packages:
+  - samba 
+  - smbclient
+  - ldb-tools
+  - winbind
+  - libpam-winbind
+  - libnss-winbind
+  - heimdal-clients
+  - libpam-heimdal
+  - bind9
+  - bind9utils
+  - dnsutils
+samba4_unused_services:
+  - smbd  
+  - nmbd
+  - winbind

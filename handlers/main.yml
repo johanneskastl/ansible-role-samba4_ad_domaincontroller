@@ -11,3 +11,10 @@
   file:
     path: "{{ path_to_smb_conf }}"
     state: 'absent'
+
+- name: 'Stop Samba4 AD Domaincontroller services directly after the packages were installed'
+  service:
+    name: "{{ item }}"
+    state: 'stopped'
+    masked: 'false'
+  with_items: "{{ samba4_ad_dc_services }}"

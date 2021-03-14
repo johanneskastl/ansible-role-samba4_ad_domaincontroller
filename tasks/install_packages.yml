@@ -7,3 +7,4 @@
     state: 'present'
   notify:
     - 'Remove file smb.conf (if it was created during installation)'
+    - 'Stop Samba4 AD Domaincontroller services directly after the packages were installed'

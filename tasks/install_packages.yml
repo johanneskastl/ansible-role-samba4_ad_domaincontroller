@@ -1,0 +1,7 @@
+---
+# samba4_ad_domaincontroller/tasks/install_packages.yml
+
+- name: 'Install Samba4 packages'
+  package:
+    name: "{{ samba4_packages }}"
+    state: 'present'

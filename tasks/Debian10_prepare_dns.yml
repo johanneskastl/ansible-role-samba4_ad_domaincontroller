@@ -1,6 +1,12 @@
 ---
 # samba4_ad_domaincontroller/tasks/Debian10_prepare_dns.yml
 
+- name: "Stop {{ bind_systemd_unit }} service"
+  service:
+    name: "{{ bind_systemd_unit }}"
+    state: 'stopped'
+    enabled: 'true'
+
 - name: 'Set TRUNCATE_NAMESERVER_LIST_AFTER_LOOPBACK_ADDRESS in /etc/default/resolvconf'
   lineinfile:
     path: '/etc/default/resolvconf'

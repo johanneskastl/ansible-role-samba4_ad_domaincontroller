@@ -13,7 +13,9 @@ samba4_packages:
   - bind9
   - bind9utils
   - dnsutils
-samba4_unused_services:
+
+# Services that should be masked to prevent starting them accidentally
+samba4_masked_services:
   - smbd  
   - nmbd
   - winbind

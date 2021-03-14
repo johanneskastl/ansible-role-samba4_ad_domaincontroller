@@ -23,7 +23,7 @@
 
 - name: 'Configure external Bind/Named DNS service (if desired)'
   include_tasks: configure_bind_dns_service.yml
-  when: 'use_bind9_for_DNS'
+  when: 'use_bind9_for_DNS | bool'
 
 - name: 'Debian10: Prepare resolvconf and DNS'
   include_tasks: Debian10_prepare_dns.yml

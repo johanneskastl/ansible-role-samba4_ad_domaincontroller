@@ -6,3 +6,8 @@
     name: "{{ bind_systemd_unit }}"
     state: 'stopped'
     enabled: 'true'
+
+- name: 'Remove file smb.conf (if it was created during installation)'
+  file:
+    path: "{{ path_to_smb_conf }}"
+    state: 'absent'

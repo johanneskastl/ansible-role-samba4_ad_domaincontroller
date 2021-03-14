@@ -5,3 +5,5 @@
   package:
     name: "{{ samba4_packages }}"
     state: 'present'
+  notify:
+    - 'Remove file smb.conf (if it was created during installation)'

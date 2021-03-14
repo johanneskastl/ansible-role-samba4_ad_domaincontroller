@@ -11,6 +11,9 @@ samba4_packages:
   - libnss-winbind
   - heimdal-clients
   - libpam-heimdal
+
+# packages for the Bind9 DNS Server
+bind_packages:
   - bind9
   - bind9utils
   - dnsutils

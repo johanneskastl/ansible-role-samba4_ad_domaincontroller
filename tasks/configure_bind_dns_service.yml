@@ -18,8 +18,8 @@
 - name: 'Add include for /var/lib/samba/bind-dns/named.conf to /etc/bind/named.conf.local'
   lineinfile:
     path: '/etc/bind/named.conf.local'
-    regex: 'include /var/lib/samba/bind-dns/named.conf'
-    line: 'include /var/lib/samba/bind-dns/named.conf'
+    regex: 'include "/var/lib/samba/bind-dns/named.conf";'
+    line: 'include "/var/lib/samba/bind-dns/named.conf";'
     create: 'true'
     owner: 'root'
     group: 'bind'

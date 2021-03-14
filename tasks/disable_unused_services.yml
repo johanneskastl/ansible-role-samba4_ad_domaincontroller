@@ -1,0 +1,9 @@
+---
+# samba4_ad_domaincontroller/tasks/disable_unused_services.yml
+
+- name: 'Disable unused Samba4 services'
+  service:
+    name: "{{ item }}"
+    state: 'stopped'
+    enabled: 'false'
+  with_items: "{{ samba4_unused_services }}"

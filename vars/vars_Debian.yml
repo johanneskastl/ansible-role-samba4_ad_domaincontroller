@@ -1,6 +1,7 @@
 ---
-# Debian
+# samba4_ad_domaincontroller/vars/vars_Debian.yml
 
+# packages to be installed
 samba4_packages:
   - samba 
   - smbclient
@@ -14,11 +15,13 @@ samba4_packages:
   - bind9utils
   - dnsutils
 
-# Services that should be masked to prevent starting them accidentally
+# services that should be masked to prevent starting them accidentally
 samba4_masked_services:
   - smbd  
   - nmbd
   - winbind
+
+# service that should be unmasked and enabled (not started yet!)
 samba4_ad_dc_services:
   - samba-ad-dc
 

@@ -6,4 +6,5 @@
     name: "{{ item }}"
     state: 'stopped'
     enabled: 'false'
+    masked: 'true'
   with_items: "{{ samba4_unused_services }}"

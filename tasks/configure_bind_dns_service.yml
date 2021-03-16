@@ -25,3 +25,27 @@
     owner: 'root'
     group: 'bind'
     mode: '0644'
+
+- name: 'Fix permissions on /var/lib/samba/bind-dns/'
+  file:
+    path: '/var/lib/samba/bind-dns/'
+    state: 'directory'
+    owner: 'root'
+    group: 'bind'
+    mode: '0770'
+
+- name: 'Fix permissions on /var/lib/samba/bind-dns/named.conf'
+  file:
+    path: '/var/lib/samba/bind-dns/named.conf'
+    state: 'file'
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
+
+- name: 'Fix permissions on /var/lib/samba/bind-dns/dns.keytab'
+  file:
+    path: '/var/lib/samba/bind-dns/dns.keytab'
+    state: 'file'
+    owner: 'root'
+    group: 'bind'
+    mode: '0640'

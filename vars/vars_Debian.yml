@@ -5,6 +5,7 @@
 samba4_packages:
   - samba 
   - smbclient
+  - acl
   - ldb-tools
   - winbind
   - libpam-winbind

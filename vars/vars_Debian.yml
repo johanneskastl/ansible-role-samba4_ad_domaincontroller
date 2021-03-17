@@ -5,12 +5,15 @@
 samba4_packages:
   - samba 
   - smbclient
-  - acl
   - ldb-tools
   - winbind
+
+# other packages that do not trigger a removal of smb.conf
+additional_packages:
+  - acl
+  - heimdal-clients
   - libpam-winbind
   - libnss-winbind
-  - heimdal-clients
   - libpam-heimdal
 
 # packages for the Bind9 DNS Server

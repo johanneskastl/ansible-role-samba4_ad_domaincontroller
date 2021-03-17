@@ -15,6 +15,7 @@ additional_packages:
   - libpam-winbind
   - libnss-winbind
   - libpam-heimdal
+  - rsync
 
 # packages for the Bind9 DNS Server
 bind_packages:

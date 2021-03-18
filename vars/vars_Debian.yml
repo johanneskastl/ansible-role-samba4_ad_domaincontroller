@@ -43,5 +43,12 @@ bind_systemd_unit: 'bind9'
 bind_user: 'bind'
 bind_group: 'bind'
 
+# bind directories
+bind_directories:
+  - path: '/var/lib/samba/bind-dns/'
+    mode: '0770'
+  - path: '/var/lib/samba/bind-dns/dns'
+    mode: '0770'
+
 # path to smb.conf
 path_to_smb_conf: '/etc/samba/smb.conf'

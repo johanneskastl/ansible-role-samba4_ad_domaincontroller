@@ -26,6 +26,10 @@
     group: "{{ bind_group }}"
     mode: '0644'
 
+#
+# Fix directory permissions
+#
+
 - name: 'Fix permissions on directory /var/lib/samba/bind-dns/'
   file:
     path: '/var/lib/samba/bind-dns/'
@@ -33,6 +37,10 @@
     owner: 'root'
     group: "{{ bind_group }}"
     mode: '0750'
+
+#
+# Fix file permissions
+#
 
 - name: 'Fix permissions on file /var/lib/samba/bind-dns/named.conf'
   file:

@@ -32,7 +32,7 @@
     state: 'directory'
     owner: 'root'
     group: 'bind'
-    mode: '0770'
+    mode: '0750'
 
 - name: 'Fix permissions on /var/lib/samba/bind-dns/named.conf'
   file:

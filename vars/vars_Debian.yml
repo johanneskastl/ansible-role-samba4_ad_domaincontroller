@@ -50,5 +50,14 @@ bind_directories:
   - path: '/var/lib/samba/bind-dns/dns'
     mode: '0770'
 
+# bind files
+bind_files:
+  - path: '/var/lib/samba/bind-dns/named.conf'
+    mode: '0644'
+  - path: '/var/lib/samba/bind-dns/dns.keytab'
+    mode: '0640'
+  - path: '/var/lib/samba/bind-dns/dns/sam.ldb'
+    mode: '0660'
+
 # path to smb.conf
 path_to_smb_conf: '/etc/samba/smb.conf'

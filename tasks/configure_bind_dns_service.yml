@@ -23,7 +23,7 @@
     line: 'include "/var/lib/samba/bind-dns/named.conf";'
     create: 'true'
     owner: 'root'
-    group: 'bind'
+    group: "{{ bind_group }}"
     mode: '0644'
 
 - name: 'Fix permissions on directory /var/lib/samba/bind-dns/'
@@ -31,7 +31,7 @@
     path: '/var/lib/samba/bind-dns/'
     state: 'directory'
     owner: 'root'
-    group: 'bind'
+    group: "{{ bind_group }}"
     mode: '0750'
 
 - name: 'Fix permissions on file /var/lib/samba/bind-dns/named.conf'
@@ -47,7 +47,7 @@
     path: '/var/lib/samba/bind-dns/dns.keytab'
     state: 'file'
     owner: 'root'
-    group: 'bind'
+    group: "{{ bind_group }}"
     mode: '0640'
 
 - name: 'Fix permissions on directory /var/lib/samba/bind-dns/dns'
@@ -55,7 +55,7 @@
     path: '/var/lib/samba/bind-dns/dns'
     state: 'directory'
     owner: 'root'
-    group: 'bind'
+    group: "{{ bind_group }}"
     mode: '0770'
 
 - name: 'Fix permissions on file /var/lib/samba/bind-dns/dns/sam.ldb'
@@ -63,5 +63,5 @@
     path: '/var/lib/samba/bind-dns/dns/sam.ldb'
     state: 'file'
     owner: 'root'
-    group: 'bind'
+    group: "{{ bind_group }}"
     mode: '0660'

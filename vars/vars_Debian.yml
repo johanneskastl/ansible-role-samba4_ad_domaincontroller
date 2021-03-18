@@ -39,5 +39,9 @@ use_bind9_for_DNS: 'true'
 # name of the bind aka named service
 bind_systemd_unit: 'bind9'
 
+# name of user/group for bind
+bind_user: 'bind'
+bind_group: 'bind'
+
 # path to smb.conf
 path_to_smb_conf: '/etc/samba/smb.conf'

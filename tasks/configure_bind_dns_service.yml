@@ -49,3 +49,19 @@
     owner: 'root'
     group: 'bind'
     mode: '0640'
+
+- name: 'Fix permissions on directory /var/lib/samba/bind-dns/dns'
+  file:
+    path: '/var/lib/samba/bind-dns/dns'
+    state: 'directory'
+    owner: 'root'
+    group: 'bind'
+    mode: '0770'
+
+- name: 'Fix permissions on file /var/lib/samba/bind-dns/dns/sam.ldb'
+  file:
+    path: '/var/lib/samba/bind-dns/dns/sam.ldb'
+    state: 'file'
+    owner: 'root'
+    group: 'bind'
+    mode: '0660'

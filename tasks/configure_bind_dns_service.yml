@@ -30,13 +30,14 @@
 # Fix directory permissions
 #
 
-- name: 'Fix permissions on directory /var/lib/samba/bind-dns/'
+- name: "Fix permissions on directory {{ item.path }}"
   file:
-    path: '/var/lib/samba/bind-dns/'
+    path: "{{ item.path }}"
     state: 'directory'
     owner: 'root'
     group: "{{ bind_group }}"
-    mode: '0750'
+    mode: "{{ item.mode }}"
+  with_items: "{{ bind_directories }}"
 
 #
 # Fix file permissions
@@ -57,14 +58,6 @@
     owner: 'root'
     group: "{{ bind_group }}"
     mode: '0640'
-
-- name: 'Fix permissions on directory /var/lib/samba/bind-dns/dns'
-  file:
-    path: '/var/lib/samba/bind-dns/dns'
-    state: 'directory'
-    owner: 'root'
-    group: "{{ bind_group }}"
-    mode: '0770'
 
 - name: 'Fix permissions on file /var/lib/samba/bind-dns/dns/sam.ldb'
   file:

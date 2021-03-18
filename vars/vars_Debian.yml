@@ -46,8 +46,12 @@ bind_group: 'bind'
 # bind directories
 bind_directories:
   - path: '/var/lib/samba/bind-dns/'
+    owner: 'root'
+    group: 'bind'
     mode: '0770'
   - path: '/var/lib/samba/bind-dns/dns'
+    owner: 'root'
+    group: 'bind'
     mode: '0770'
 
 # bind files

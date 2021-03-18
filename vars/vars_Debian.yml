@@ -57,10 +57,16 @@ bind_directories:
 # bind files
 bind_files:
   - path: '/var/lib/samba/bind-dns/named.conf'
+    owner: 'root'
+    group: 'root'
     mode: '0644'
   - path: '/var/lib/samba/bind-dns/dns.keytab'
+    owner: 'root'
+    group: 'bind'
     mode: '0640'
   - path: '/var/lib/samba/bind-dns/dns/sam.ldb'
+    owner: 'root'
+    group: 'bind'
     mode: '0660'
 
 # path to smb.conf

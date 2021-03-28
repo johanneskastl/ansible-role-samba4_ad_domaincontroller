@@ -73,7 +73,7 @@ bind_files:
 path_to_smb_conf: '/etc/samba/smb.conf'
 
 # chrony settings
-path_to_chrony_conf: '/etc/chrony.conf'
+path_to_chrony_conf: '/etc/chrony/chrony.conf'
 path_to_samba_ntp_signd: '/var/lib/samba/ntp_signd/'
 chrony_group: '_chrony'
 chrony_service: 'chronyd'

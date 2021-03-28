@@ -18,3 +18,8 @@
     state: 'stopped'
     masked: 'false'
   with_items: "{{ samba4_ad_dc_services }}"
+
+- name: 'Restart chrony service'
+  service:
+    name: "{{ chrony_service }}"
+    state: 'restarted'

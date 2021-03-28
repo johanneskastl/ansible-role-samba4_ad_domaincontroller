@@ -13,6 +13,9 @@
 - name: 'Disable services not in use on the Samba4 AD Domaincontrollers'
   include_tasks: disable_unused_services.yml
 
+- name: 'Configure chrony'
+  include_tasks: configure_chrony.yml
+
 - name: 'Enable Samba4 AD Domaincontroller services'
   include_tasks: enable_samba_ad_dc_services.yml
 

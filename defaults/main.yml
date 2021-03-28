@@ -1,0 +1,8 @@
+---
+# samba4_ad_domaincontroller/defaults/main.yml
+
+list_of_ntp_servers:
+  - 'ntp1.fau.de'
+  - 'ntp2.fau.de'
+  - 'ntp3.fau.de'
+  - 'ntp4.fau.de'

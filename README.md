@@ -3,7 +3,7 @@
 samba4_ad_domaincontroller
 =========
 
-Prepare a Samba4 ActiveDirectory domaincontroller (install packages, ...) 
+Prepare a Samba4 ActiveDirectory domaincontroller (install packages, ...).
 
 Requirements
 ------------
@@ -25,7 +25,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: 'johanneskastl.samba4_ad_domaincontroller' }
+         - role: 'johanneskastl.samba4_ad_domaincontroller'
 
 License
 -------

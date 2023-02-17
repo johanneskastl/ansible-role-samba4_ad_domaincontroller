@@ -2,23 +2,23 @@
 # samba4_ad_domaincontroller/tasks/main.yml
 
 - name: "Load variables"
-  include_vars: "{{ item }}"
+  ansible.builtin.include_vars: "{{ item }}"
   with_first_found:
     - "vars_{{ ansible_distribution }}.yml"
     - "vars_{{ ansible_os_family }}.yml"
 
 - name: 'Install packages'
-  include_tasks: install_packages.yml
+  ansible.builtin.include_tasks: install_packages.yml
 
 - name: 'Disable services not in use on the Samba4 AD Domaincontrollers'
-  include_tasks: disable_unused_services.yml
+  ansible.builtin.include_tasks: disable_unused_services.yml
 
 - name: 'Configure chrony'
-  include_tasks: configure_chrony.yml
+  ansible.builtin.include_tasks: configure_chrony.yml
 
 - name: 'Enable Samba4 AD Domaincontroller services'
-  include_tasks: enable_samba_ad_dc_services.yml
+  ansible.builtin.include_tasks: enable_samba_ad_dc_services.yml
 
 - name: 'Configure external Bind/Named DNS service (if desired)'
-  include_tasks: configure_bind_dns_service.yml
+  ansible.builtin.include_tasks: configure_bind_dns_service.yml
   when: 'use_bind9_for_DNS | bool'

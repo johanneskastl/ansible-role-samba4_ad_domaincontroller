@@ -2,7 +2,7 @@ galaxy_info:
   role_name: 'samba4_ad_domaincontroller'
   namespace: 'johanneskastl'
   author: 'Johannes Kastl'
-  description: 'YYY'
+  description: 'Prepare a Samba4 ActiveDirectory domaincontroller (install packages, ...)'
   company: 'B1 Systems GmbH'
 
   license: 'BSD-3-Clause'

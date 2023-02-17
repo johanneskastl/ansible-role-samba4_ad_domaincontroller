@@ -13,7 +13,9 @@ None.
 Role Variables
 --------------
 
-None.
+TBD.
+
+Please pay attention, this role previously used a variable `use_bind9_for_DNS`, that was renamed to `use_bind9_for_dns`. Please adjust your playbooks accordingly.
 
 Dependencies
 ------------

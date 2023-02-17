@@ -11,7 +11,7 @@
   notify:
     - 'Restart chrony service'
 
-- name: 'Create {{ path_to_chrony_conf }} on Debian'
+- name: 'Debian: Create {{ path_to_chrony_conf }}'
   ansible.builtin.template:
     src: 'Debian10/etc_chrony.conf.j2'
     dest: "{{ path_to_chrony_conf }}"

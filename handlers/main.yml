@@ -2,24 +2,24 @@
 # samba4_ad_domaincontroller/handlers/main.yml
 
 - name: 'Stop Bind service if it has been started during installation'
-  service:
+  ansible.builtin.service:
     name: "{{ bind_systemd_unit }}"
     state: 'stopped'
     enabled: 'true'
 
 - name: 'Remove file smb.conf (if it was created during installation)'
-  file:
+  ansible.builtin.file:
     path: "{{ path_to_smb_conf }}"
     state: 'absent'
 
 - name: 'Stop Samba4 AD Domaincontroller services directly after the packages were installed'
-  service:
+  ansible.builtin.service:
     name: "{{ item }}"
     state: 'stopped'
     masked: 'false'
   with_items: "{{ samba4_ad_dc_services }}"
 
 - name: 'Restart chrony service'
-  service:
+  ansible.builtin.service:
     name: "{{ chrony_service }}"
     state: 'restarted'

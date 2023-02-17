@@ -2,7 +2,7 @@
 # samba4_ad_domaincontroller/tasks/enable_samba_ad_dc_services.yml
 
 - name: 'Enable Samba4 AD Domaincontroller services'
-  service:
+  ansible.builtin.service:
     name: "{{ item }}"
     enabled: 'true'
     masked: 'false'

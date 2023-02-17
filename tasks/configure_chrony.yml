@@ -2,7 +2,7 @@
 # samba4_ad_domaincontroller/tasks/configure_chrony.yml
 
 - name: 'Set permissions on socket'
-  file:
+  ansible.builtin.file:
     path: "{{ path_to_samba_ntp_signd }}"
     state: 'directory'
     owner: 'root'
@@ -12,7 +12,7 @@
     - 'Restart chrony service'
 
 - name: 'Create {{ path_to_chrony_conf }} on Debian'
-  template:
+  ansible.builtin.template:
     src: 'Debian10/etc_chrony.conf.j2'
     dest: "{{ path_to_chrony_conf }}"
     owner: 'root'
@@ -23,7 +23,7 @@
     - 'Restart chrony service'
 
 - name: 'Enable and start chrony service'
-  service:
+  ansible.builtin.service:
     name: "{{ chrony_service }}"
     state: 'started'
     enabled: 'true'

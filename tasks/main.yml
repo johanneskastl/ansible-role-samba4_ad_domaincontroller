@@ -22,4 +22,4 @@
 - name: 'Configure external Bind/Named DNS service (if desired)'
   ansible.builtin.include_tasks: configure_bind_dns_service.yml
   when:
-    - 'use_bind9_for_DNS | bool'
+    - 'use_bind9_for_dns | bool'

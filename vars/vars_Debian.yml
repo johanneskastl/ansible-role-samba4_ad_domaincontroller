@@ -3,7 +3,7 @@
 
 # packages to be installed
 samba4_packages:
-  - samba 
+  - samba
   - smbclient
   - ldb-tools
   - winbind
@@ -25,7 +25,7 @@ bind_packages:
 
 # services that should be masked to prevent starting them accidentally
 samba4_masked_services:
-  - smbd  
+  - smbd
   - nmbd
   - winbind
 
